@@ -374,6 +374,64 @@
             font-size: 0.8rem;
         }
 
+        /* Developer */
+        .developer {
+            padding: 5rem 0;
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .dev-card {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2.5rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            margin-top: 2rem;
+        }
+
+        .dev-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border);
+        }
+
+        .dev-info h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .dev-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .dev-social {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--text-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .dev-social:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .feature-grid { grid-template-columns: 1fr; }
@@ -520,6 +578,26 @@
         </div>
     </section>
 
+    <section class="developer">
+        <div class="container">
+            <span class="section-label">Developer</span>
+            <h2 class="section-title">Built with passion</h2>
+            <div class="dev-card">
+                <img src="screenshots/developer.jpeg" alt="Developer" class="dev-photo">
+                <div class="dev-info">
+                    <h3>MDErramus</h3>
+                    <p>Blockchain Developer</p>
+                    <a href="https://x.com/MDErramus" target="_blank" class="dev-social">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                        @MDErramus
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -559,3 +637,5 @@
     </footer>
 </body>
 </html>
+
+

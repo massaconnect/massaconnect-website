@@ -533,6 +533,65 @@
             .screenshot-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
+            /* Carousel */
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 20px 0;
+        }
+        .carousel-track::-webkit-scrollbar { display: none; }
+        .carousel-item {
+            flex: 0 0 220px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            transition: all 0.3s;
+        }
+        .carousel-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.18);
+        }
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .carousel-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .carousel-btn:hover {
+            background: var(--bg-alt);
+            border-color: var(--text);
+        }
+        .carousel-btn svg {
+            width: 20px;
+            height: 20px;
+            color: var(--text);
+        }
     </style>
 </head>
 <body>
@@ -589,7 +648,7 @@
                 </div>
                 <div class="hero-visual">
                     <div class="hero-phone">
-                        <img src="screenshots/dashboard1.jpeg" alt="MassaPay App">
+                        <img src="screenshots/hero.jpeg" alt="MassaPay App">
                     </div>
                 </div>
             </div>
@@ -705,12 +764,41 @@
                 <h2 class="section-title">Beautiful design</h2>
                 <p class="section-desc">Crafted with attention to every detail.</p>
             </div>
-            <div class="screenshot-grid">
-                <div class="screenshot-item"><img src="screenshots/dashboard1.jpeg" alt="Dashboard"></div>
-                <div class="screenshot-item"><img src="screenshots/swap1.jpeg" alt="Swap"></div>
-                <div class="screenshot-item"><img src="screenshots/staking1.jpeg" alt="Staking"></div>
-                <div class="screenshot-item"><img src="screenshots/portfolio1.jpeg" alt="Portfolio"></div>
+            <div class="carousel-container">
+                <div class="carousel-track" id="screenshotCarousel">
+                    <div class="carousel-item"><img src="screenshots/hero.jpeg" alt="Welcome"></div>
+                    <div class="carousel-item"><img src="screenshots/dashboard1.jpeg" alt="Dashboard"></div>
+                    <div class="carousel-item"><img src="screenshots/dashboard2.jpeg" alt="Dashboard"></div>
+                    <div class="carousel-item"><img src="screenshots/swap1.jpeg" alt="Swap"></div>
+                    <div class="carousel-item"><img src="screenshots/swap2.jpeg" alt="Swap"></div>
+                    <div class="carousel-item"><img src="screenshots/swap3.jpeg" alt="Swap"></div>
+                    <div class="carousel-item"><img src="screenshots/swap4.jpeg" alt="Swap"></div>
+                    <div class="carousel-item"><img src="screenshots/staking1.jpeg" alt="Staking"></div>
+                    <div class="carousel-item"><img src="screenshots/staking2.jpeg" alt="Staking"></div>
+                    <div class="carousel-item"><img src="screenshots/staking3.jpeg" alt="Staking"></div>
+                    <div class="carousel-item"><img src="screenshots/portfolio1.jpeg" alt="Portfolio"></div>
+                    <div class="carousel-item"><img src="screenshots/portfolio2.jpeg" alt="Portfolio"></div>
+                    <div class="carousel-item"><img src="screenshots/nft1.jpeg" alt="NFT"></div>
+                    <div class="carousel-item"><img src="screenshots/dapp1.jpeg" alt="DApp"></div>
+                    <div class="carousel-item"><img src="screenshots/dapp2.jpeg" alt="DApp"></div>
+                    <div class="carousel-item"><img src="screenshots/settings1.jpeg" alt="Settings"></div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" onclick="scrollCarousel(-1)">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button class="carousel-btn" onclick="scrollCarousel(1)">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
             </div>
+            <script>
+                function scrollCarousel(direction) {
+                    const carousel = document.getElementById('screenshotCarousel');
+                    const scrollAmount = 260 * direction;
+                    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
+            </script>
         </div>
     </section>
 
@@ -804,3 +892,6 @@
     </footer>
 </body>
 </html>
+
+
+

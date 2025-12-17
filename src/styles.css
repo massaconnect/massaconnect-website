@@ -21,6 +21,18 @@ body {
     line-height: 1.6;
 }
 
+/* Tab Navigation - Show/Hide Sections */
+.content-section {
+    display: none;
+}
+.content-section.active {
+    display: block;
+}
+.navbar-menu a.active {
+    color: var(--accent);
+    font-weight: 600;
+}
+
 .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 
 /* Navigation */

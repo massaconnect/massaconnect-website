@@ -96,10 +96,8 @@ body {
     overflow: hidden;
 }
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    display: block;
+    max-width: 760px;
 }
 .hero-text { position: relative; z-index: 1; }
 .hero-badge {
@@ -149,18 +147,6 @@ body {
 }
 .hero-stat-value { font-size: 1.5rem; font-weight: 700; color: var(--text); }
 .hero-stat-label { font-size: 0.8rem; color: var(--text-light); margin-top: 2px; }
-.hero-visual { position: relative; display: flex; justify-content: center; }
-.hero-phone {
-    width: 280px;
-    border-radius: 32px;
-    overflow: hidden;
-    box-shadow: 0 40px 80px -20px rgba(0,0,0,0.3);
-    transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
-    transition: transform 0.4s;
-}
-.hero-phone:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
-.hero-phone img { width: 100%; display: block; }
-
 /* Buttons */
 .btn {
     display: inline-flex;
@@ -438,7 +424,6 @@ footer { padding: 60px 0 30px; border-top: 1px solid var(--border); background: 
     .hero-content { grid-template-columns: 1fr; text-align: center; }
     .hero-buttons { justify-content: center; }
     .hero-stats { justify-content: center; }
-    .hero-visual { margin-top: 40px; }
     .download-grid { grid-template-columns: 1fr; text-align: center; }
     .download-stats { justify-content: center; }
     .features-grid { grid-template-columns: repeat(2, 1fr); }
